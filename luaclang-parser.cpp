@@ -133,7 +133,8 @@ static int l_parseTU(lua_State *L) {
     }
 
     CXTranslationUnit *tu = newTU(L);
-    *tu = clang_parseTranslationUnit(idx, sourceFile, args, nArgs, NULL, 0, CXTranslationUnit_SkipFunctionBodies);
+//    *tu = clang_parseTranslationUnit(idx, sourceFile, args, nArgs, NULL, 0, CXTranslationUnit_SkipFunctionBodies);
+    *tu = clang_parseTranslationUnit(idx, sourceFile, args, nArgs, NULL, 0, CXTranslationUnit_None );
     delete [] args;
 
     if (*tu == NULL) {
